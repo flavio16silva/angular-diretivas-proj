@@ -2,3 +2,37 @@
 <button (click)="trocar()">CHANGE</button>
 
 <h1 [ngStyle]="{'background':corFundo, 'color':corDaFonte}">CURSO ANGULAR</h1>
+
+<!-- ngContent = pai passando herança para o filho -->
+<ng-content select="h2"></ng-content>
+
+
+
+<h1>Lista de Compras</h1>
+<p>Adicione um item</p>
+<input type="text" [(ngModel)]="item">
+<button (click)="adicionarLista()" >ADICIONAR</button>
+<p>{{ item }}</p>
+
+<ng-content select="p"></ng-content>
+
+<ul>
+  <!-- Adicionando um elemento na lista na tela -->
+  <li *ngFor="let elemento of lista"> {{ elemento }}</li>
+</ul>
+
+<hr>
+
+<!-- Por padrão ng-template já vem desabilitado - false. Ideal para ser usado em condicionais para true/false -->
+<ng-template [ngIf]="isEnableBlock">
+  <a href="#">FINALIZAR COMPRA</a>
+</ng-template>
+<br>
+
+<ng-template [ngIf]="true">
+  <a href="#">ADICIONAR AO CARRINHO</a>
+</ng-template>
+
+<hr>
+
+
