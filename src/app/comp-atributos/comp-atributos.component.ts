@@ -12,8 +12,15 @@ export class CompAtributosComponent implements OnInit {
   estilo:string = "disable"
   corFundo:string = "blue"
   corDaFonte:string = "red"
+  item:string = ""
+  lista:string[] = []
+  isEnableBlock:boolean = false
 
   constructor() { }
+
+  adicionarLista(){
+    this.lista.push(this.item)
+  }
 
   ngOnInit(): void {
   }
